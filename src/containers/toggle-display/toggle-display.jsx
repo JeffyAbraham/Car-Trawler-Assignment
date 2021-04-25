@@ -1,8 +1,24 @@
 import "./toggle-display.css";
 import { useState } from "react";
+import DropDownButton from "../../components/dropdown-button/dropdown-button";
 
-export default function Toggle({ type, children }) {
-  const [status, setDisplay] = useState(true);
+export default function Toggle({ type, children,title }) {
+  const [status, setDisplay] = useState(false);
 
-  return <div className="form-container">{children}</div>;
+  const getDropdownStatus = function (status) {
+    setDisplay(status);
+    console.log(status)
+  };
+
+  return (
+    <div>
+      <div className="form-container">
+        <div>Price</div>
+        <div>
+          <DropDownButton getDropdownState={getDropdownStatus} />
+        </div>
+      </div>
+      <div className={status ? "show-content" : "hide-content"}>{children}</div>
+    </div>
+  );
 }
