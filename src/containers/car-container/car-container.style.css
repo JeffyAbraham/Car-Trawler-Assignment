@@ -1,0 +1,14 @@
+.car-cotainer-flex
+{
+    display: flex;
+    background-color: seashell;
+    margin-top: 40px;
+    height: 250px;
+    
+}
+@media screen and (max-width: 880px) {
+    .car-cotainer-flex{
+        flex-direction: column;
+        height: fit-content;
+    }
+  }

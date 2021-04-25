@@ -1,0 +1,8 @@
+.legend-flexbox {
+  display: flex;
+  width: 40px;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: 600;
+  color: black;
+}
