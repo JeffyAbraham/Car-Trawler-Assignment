@@ -10,7 +10,6 @@ function App() {
        <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/cars/:id" component={CarProfile} />
-       
       </Switch>
      
       
