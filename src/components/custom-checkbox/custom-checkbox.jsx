@@ -1,5 +1,5 @@
 import "./custom-checkbox.css";
-import { useRef, useEffect } from "react";
+
 export default function CustomChecKBox({
   label,
   name,
@@ -20,7 +20,7 @@ export default function CustomChecKBox({
           }}
           className="checkmark"
         >
-          {active == "true" ? (
+          {active === "true" ? (
             <div className="show-checkmark"></div>
           ) : (
             <div></div>

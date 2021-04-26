@@ -1,10 +1,13 @@
 //deform the array
+import { v4 as uuidv4 } from 'uuid';
 export const constructArrayByPrice = function (VehVendorAvails) {
   var newArr = [];
   VehVendorAvails.map(({ Vendor, VehAvails }) => {
-    VehAvails.map((carDetails) => {
+    return VehAvails.map((carDetails) => {
+      carDetails['_id']=uuidv4()
       carDetails["Name"] = Vendor["@Name"];
-      newArr.push(carDetails);
+
+      return newArr.push(carDetails);
     });
   });
   var x = newArr.sort((a, b) => {
@@ -15,8 +18,31 @@ export const constructArrayByPrice = function (VehVendorAvails) {
   return x;
 };
 
+export const multiFilter = function (
+  carDetails,
+  priceFilterId,
+  supplyFilterId
+) {
+  var filterPrice = filterPriceById(priceFilterId, carDetails);
+  if (supplyIdtoName[supplyFilterId] !== undefined) {
+    return filterPrice.filter((carDetails) => {
+      return carDetails["Name"] === supplyIdtoName[supplyFilterId];
+    });
+  }
+  return filterPrice;
+};
+
+//Use the id to filter by suppliers(better option would be to use object mapping to prevent redundency)
+
+var supplyIdtoName = {
+  1: "HERTZ",
+  2: "AVIS",
+  3: "ALAMO",
+};
+
+
 //Use the id to filter the price
-export const filterPriceById = function (id, originalArray) {
+const filterPriceById = function (id, originalArray) {
   switch (parseInt(id)) {
     case 1:
       return originalArray.filter((carDetails) => {
@@ -34,8 +60,22 @@ export const filterPriceById = function (id, originalArray) {
       return originalArray.filter((carDetails) => {
         return carDetails["TotalCharge"]["@RateTotalAmount"] > 900;
       });
-
+    case 0:
+      return originalArray;
     default:
       return originalArray;
   }
 };
+
+export const findById =function(id,originalState)
+{
+
+  var found=originalState.find(cars=>
+    {
+      return cars['_id']===id
+    })
+   return found
+
+
+
+}

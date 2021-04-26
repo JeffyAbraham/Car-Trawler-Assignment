@@ -1,7 +1,7 @@
-export default function WithSpinner({ children,isFetching }) {
+export default function WithSpinner({ children,status }) {
  
 
-    if(isFetching)
+    if(status===undefined||status===true)
     {
         return(<div>Spinner</div>)
     }

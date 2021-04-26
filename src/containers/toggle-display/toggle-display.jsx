@@ -7,13 +7,13 @@ export default function Toggle({ type, children,title }) {
 
   const getDropdownStatus = function (status) {
     setDisplay(status);
-    console.log(status)
+   
   };
 
   return (
     <div>
       <div className="form-container">
-        <div>Price</div>
+        <div>{title}</div>
         <div>
           <DropDownButton getDropdownState={getDropdownStatus} />
         </div>

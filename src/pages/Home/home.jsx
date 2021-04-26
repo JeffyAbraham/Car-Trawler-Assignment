@@ -4,17 +4,17 @@ import { apiReq } from "../../redux/car-reducer/car-action";
 import { connect } from "react-redux";
 import WithSpinner from "../../hoc/with-spinner/with-spinner";
 import AutoComplete from "../../components/google-autocomplete/autocomplete.component";
-import FilterContainer from "../../containers/filter-container/filter-container";
+import PriceFilterContainer from "../../containers/filter-container/price-filter-container/price-filter-container";
+import SupplyFilterContainer from '../../containers/filter-container/supply-filter-container/supply-filter-container'
 
 function Home({ apiReq, filteredVersionCarDetails, isFetching }) {
+  console.log(filteredVersionCarDetails);
   useEffect(() => {
     apiReq();
   }, []);
 
   return (
-    
     <div>
-      {console.log(filteredVersionCarDetails)}
       <div>
         <div>
           <AutoComplete label="Pick Location" />
@@ -23,13 +23,19 @@ function Home({ apiReq, filteredVersionCarDetails, isFetching }) {
           <AutoComplete label="Drop Location" />
         </div>
       </div>
+      <div style={{display:'flex'}}>
       <div>
-        <FilterContainer />
+
+        <PriceFilterContainer/>
+        <SupplyFilterContainer/>
       </div>
-      <div>
-        <WithSpinner isFetching={isFetching}>
+      <div style={{marginTop:'-100px' ,marginLeft:'100px'}}>
+      <WithSpinner status={isFetching}>
+        <div>
           <CarList carDetails={filteredVersionCarDetails} />
-        </WithSpinner>
+        </div>
+      </WithSpinner>
+      </div>
       </div>
     </div>
   );

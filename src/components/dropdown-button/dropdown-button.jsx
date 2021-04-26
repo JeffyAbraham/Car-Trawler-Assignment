@@ -18,11 +18,11 @@ export default function DropDownButton({ getDropdownState }) {
     >
       {active ? (
         <span>
-          <img src={UpArrow} width="24px" />
+          <img src={UpArrow} width="24px" alt='s' />
         </span>
       ) : (
         <span>
-          <img src={DownArrow} width="24px" />
+          <img src={DownArrow} width="24px" alt='p'/>
         </span>
       )}
     </div>
