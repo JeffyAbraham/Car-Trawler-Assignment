@@ -1,10 +1,11 @@
 //deform the array
-import { v4 as uuidv4 } from 'uuid';
-export const constructArrayByPrice = function (VehVendorAvails) {
+import { v4 as uuidv4 } from "uuid";
+export const constructArrayByPrice = function (VehVendorAvailss) {
   var newArr = [];
+  const { VehVendorAvails } = VehVendorAvailss;
   VehVendorAvails.map(({ Vendor, VehAvails }) => {
     return VehAvails.map((carDetails) => {
-      carDetails['_id']=uuidv4()
+      carDetails["_id"] = uuidv4();
       carDetails["Name"] = Vendor["@Name"];
 
       return newArr.push(carDetails);
@@ -16,6 +17,27 @@ export const constructArrayByPrice = function (VehVendorAvails) {
     );
   });
   return x;
+};
+
+export const setLocation = function (vehRental, data) {
+  if (data.label === "Drop") {
+    var result = { ...vehRental, Drop: data.data };
+    return result;
+  }
+  if (data.label === "Pickup") {
+    var result = { ...vehRental, Pickup: data.data };
+    return result;
+  }
+};
+export const getRentalLocation = function (data) {
+  var Pickup = data["VehRentalCore"]["PickUpLocation"]["@Name"];
+  var Drop = data["VehRentalCore"]["ReturnLocation"]["@Name"];
+  var rentals = {
+    Pickup,
+    Drop,
+  };
+
+  return rentals;
 };
 
 export const multiFilter = function (
@@ -39,7 +61,6 @@ var supplyIdtoName = {
   2: "AVIS",
   3: "ALAMO",
 };
-
 
 //Use the id to filter the price
 const filterPriceById = function (id, originalArray) {
@@ -67,15 +88,9 @@ const filterPriceById = function (id, originalArray) {
   }
 };
 
-export const findById =function(id,originalState)
-{
-
-  var found=originalState.find(cars=>
-    {
-      return cars['_id']===id
-    })
-   return found
-
-
-
-}
+export const findById = function (id, originalState) {
+  var found = originalState.find((cars) => {
+    return cars["_id"] === id;
+  });
+  return found;
+};

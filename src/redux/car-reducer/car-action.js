@@ -27,6 +27,13 @@ export const findCarbyId=(id)=>({
     type:"FIND_CAR_BY_ID",
     payload:id
 })
+export const getLocation=(data)=>({
+       
+    type: "SET_LOCATION",
+    payload:data
+
+
+})
 export const apiReq = () => {
   return (dispatch) => {
     dispatch(getCarDetails());
@@ -35,8 +42,9 @@ export const apiReq = () => {
       .get("http://www.cartrawler.com/ctabe/cars.json")
       .then((res) => {
         var data = res.data[0].VehAvailRSCore;
-        const { VehVendorAvails } = data;
-        dispatch(setCarDetails(VehVendorAvails));
+        
+        
+        dispatch(setCarDetails(data));
       })
       .catch((err) => {
         console.log(err);

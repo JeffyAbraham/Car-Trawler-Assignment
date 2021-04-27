@@ -3,10 +3,14 @@ import PassengerIcon from "../../assests/man-user.png";
 import DoorIcon from "../../assests/car-door.png";
 import BreifCase from "../../assests/briefcase.png";
 import Snowflake from "../../assests/snowflake.png";
+import PropTypes from "prop-types";
+import Avis from "../../assests/avis.png";
+import Alamo from "../../assests/alamo.png";
+import Hertz from "./../../assests/Hertz.png";
 import Legend from "../../components/icon-legend/icon-legend.component";
 import { useHistory } from "react-router-dom";
 export default function CarContainer({ ...otherProps }) {
-  const { Vehicle, TotalCharge, _id } = otherProps;
+  const { Vehicle, TotalCharge, _id, Name } = otherProps;
   const { VehMakeModel } = Vehicle;
   let history = useHistory();
   const handleClick = function handleClick(id) {
@@ -18,23 +22,48 @@ export default function CarContainer({ ...otherProps }) {
         <img src={Vehicle["PictureURL"]} alt="pics" width="200px" />
       </div>
       <div>
-        <div style={{ fontSize: "26px", fontWeight: "600" }}>
+        <div className="car-title">
           {VehMakeModel["@Name"].replace("or similar", "")}
         </div>
-        <div style={{ display: "flex" }}>
-          <Legend title={Vehicle["@PassengerQuantity"]} icon={PassengerIcon} />
-          <Legend title={Vehicle["@DoorCount"]} icon={DoorIcon} />
+        <div className="car-attr">
+          <div className="attr-flex">
+            <Legend
+              title={Vehicle["@PassengerQuantity"]}
+              icon={PassengerIcon}
+            />
+            <Legend title={Vehicle["@DoorCount"]} icon={DoorIcon} />
+          </div>
+          <div className="attr-flex">
+            <Legend title={Vehicle["@BaggageQuantity"]} icon={BreifCase} />
+            {Vehicle["@AirConditionInd"] ? (
+              <Legend title="Aircon" icon={Snowflake} />
+            ) : (
+              <div></div>
+            )}
+          </div>
         </div>
-        <div style={{ display: "flex" }}>
-          <Legend title={Vehicle["@BaggageQuantity"]} icon={BreifCase} />
-          {Vehicle["@AirConditionInd"] ? (
-            <Legend title="Aircon" icon={Snowflake} />
-          ) : (
-            <div></div>
-          )}
+        <div className="footer-container">
+          <div className="price-tag">
+            {TotalCharge["@RateTotalAmount"]}
+            <span> €</span>
+          </div>
+          <div className="supply-brand">
+            {Name === "HERTZ" ? (
+              <div>
+                <img width="64px" src={Hertz} />
+              </div>
+            ) : Name === "ALAMO" ? (
+              <div>
+                <img width="64px" src={Alamo} />
+              </div>
+            ) : (
+              <div>
+                <img width="64px" src={Avis} />
+              </div>
+            )}
+          </div>
         </div>
       </div>
-      <div>{TotalCharge["@RateTotalAmount"]}</div>
     </div>
   );
 }

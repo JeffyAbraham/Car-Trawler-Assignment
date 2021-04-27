@@ -1,8 +1,8 @@
 export default function WithSpinner({ children,status }) {
- 
+    console.log(status)
 
-    if(status===undefined||status===true)
-    {
+    if(status===undefined)
+    {  alert('get')
         return(<div>Spinner</div>)
     }
     else

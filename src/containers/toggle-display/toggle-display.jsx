@@ -14,7 +14,7 @@ export default function Toggle({ type, children,title }) {
     <div>
       <div className="form-container">
         <div>{title}</div>
-        <div>
+        <div style={{marginRight:'15px'}}>
           <DropDownButton getDropdownState={getDropdownStatus} />
         </div>
       </div>

@@ -6,6 +6,10 @@ import CarProfile from './pages/CarProfile/car-profile'
 
 function App() {
   return (
+    <div>
+      <div className='navbar'>
+       <div style={{paddingLeft:'5px'}}><span >Car Trawler</span></div> 
+      </div>
     <div className="App">
        <Switch>
         <Route exact path="/" component={Home} />
@@ -15,6 +19,7 @@ function App() {
       
        
      
+    </div>
     </div>
   );
 }

@@ -1,7 +1,17 @@
 .App
 {
   
-  width: 80%;
+  width: 90%;
   margin: auto;
   
+}
+.navbar
+{
+  background-color: black;
+  height: 50px;
+  color: white;
+  font-size: 38px;
+  font-weight: 300;
+  font-family: 'Billabong', sans-serif;
+                                                
 }

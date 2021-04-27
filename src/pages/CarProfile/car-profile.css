@@ -1,0 +1,26 @@
+.flex-car-details{
+   
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    font-size: 17px;
+    color: rgb(51, 49, 49);
+    margin-top: 20px;
+}
+.car-profile-container
+{
+    display: flex;
+    padding: 50px;
+    width: 80%;
+    margin: auto;
+  
+}
+@media screen and (max-width: 880px) {
+    .car-profile-container {
+      flex-direction: column;
+      height: fit-content;
+      margin-left: 0;
+    }
+   
+  }
+  

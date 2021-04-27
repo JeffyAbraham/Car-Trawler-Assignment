@@ -2,9 +2,14 @@ import CarContainer from "../car-container/car-container";
 
 export default function CarList({ carDetails }) {
   return (
-    <div>
+    <div style={{marginTop:'250px'}}>
       {carDetails.map((carData) => {
-        return <CarContainer {...carData} />;
+        return (
+          <div>
+            {" "}
+            <CarContainer {...carData} />
+          </div>
+        );
       })}
     </div>
   );

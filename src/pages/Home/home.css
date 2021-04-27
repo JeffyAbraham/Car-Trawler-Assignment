@@ -1,0 +1,21 @@
+.location-container
+{
+   
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+.flex-gallery
+{display: flex;}
+
+@media screen and (max-width: 880px) {
+    .location-container {
+      flex-direction: column;
+      height: fit-content;
+    }
+    .flex-gallery{
+        flex-direction: column;
+        height: fit-content;
+    }
+  }
+  
