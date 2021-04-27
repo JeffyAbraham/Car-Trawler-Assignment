@@ -3,21 +3,21 @@ import {
   multiFilter,
   findById,
   getRentalLocation,
-  setLocation
+  setLocation,
 } from "./car-utility";
 //copy the array to another array and use it to display state
 //else if original array modifies then the ablity to retain the value will be impossible
 //Ideally the it would be good idea to store the filter in  array and then iterate through the array and apply filters
 //because it would reduce the reduendancy in data on the downside you might have to write additional logic
 const INITIAL_STATE = {
-  vehRental: {Pickup: "", Drop: ""},
+  vehRental: { Pickup: "", Drop: "" },
   filteredVersionCarDetails: [],
   carDetails: [],
   isFetching: false,
   priceFilterId: "",
   supplyFilterId: " ",
   baggageFilterId: " ",
-  currentCar: '',
+  currentCar: "",
 };
 const carReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -25,7 +25,6 @@ const carReducer = (state = INITIAL_STATE, action) => {
       return { ...state, isFetching: true };
 
     case "SET_DETAILS":
-    
       return {
         ...state,
         isFetching: false,
@@ -34,9 +33,10 @@ const carReducer = (state = INITIAL_STATE, action) => {
         vehRental: getRentalLocation(action.payload),
       };
     case "SET_LOCATION":
-          return{
-            ...state,vehRental:setLocation(state.vehRental,action.payload)
-          }
+      return {
+        ...state,
+        vehRental: setLocation(state.vehRental, action.payload),
+      };
     case "ERROR_DETAILS":
       return { ...state, isFetching: false, ...action.payload };
 

@@ -5,6 +5,7 @@ import Avis from "../../assests/avis.png";
 import Alamo from "../../assests/alamo.png";
 import Hertz from "./../../assests/Hertz.png";
 import Loader from "react-loader-spinner";
+import Google from '../../components/google-autocomplete/autocomplete.component'
 import "./car-profile.css";
 function CarProfile({ match, findCarbyId, currentCar }) {
   useEffect(() => {
@@ -56,15 +57,15 @@ function CarProfile({ match, findCarbyId, currentCar }) {
               <div>
                 {currentCar["Name"] === "HERTZ" ? (
                   <div>
-                    <img width="94px" src={Hertz} alt='h'/>
+                    <img width="94px" src={Hertz} alt="h" />
                   </div>
                 ) : currentCar["Name"] === "ALAMO" ? (
                   <div>
-                    <img width="94px" src={Alamo} alt='h' />
+                    <img width="94px" src={Alamo} alt="h" />
                   </div>
                 ) : (
                   <div>
-                    <img width="94px" src={Avis} alt='h' />
+                    <img width="94px" src={Avis} alt="h" />
                   </div>
                 )}
               </div>
@@ -72,6 +73,7 @@ function CarProfile({ match, findCarbyId, currentCar }) {
           </div>
         </div>
       )}
+     
     </div>
   );
 }

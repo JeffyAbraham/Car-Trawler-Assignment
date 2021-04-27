@@ -4,6 +4,7 @@
     width: 90%;
     display: flex;
     justify-content: center;
+    background-color: blue;
 }
 .flex-gallery
 {display: flex;}
