@@ -1,3 +1,5 @@
+//toggle between 2 button on click
+//if false render the inverse immae
 import "./dropdown-button.css";
 import { useState } from "react";
 import UpArrow from "../../assests/up-arrow.png";
@@ -18,11 +20,11 @@ export default function DropDownButton({ getDropdownState }) {
     >
       {active ? (
         <span>
-          <img src={UpArrow} width="24px" alt='s' />
+          <img src={UpArrow} width="24px" alt="s" />
         </span>
       ) : (
         <span>
-          <img src={DownArrow} width="24px" alt='p'/>
+          <img src={DownArrow} width="24px" alt="p" />
         </span>
       )}
     </div>

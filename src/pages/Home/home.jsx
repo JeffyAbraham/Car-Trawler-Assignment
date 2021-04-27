@@ -9,7 +9,7 @@ import PriceFilterContainer from "../../containers/filter-container/price-filter
 import SupplyFilterContainer from '../../containers/filter-container/supply-filter-container/supply-filter-container'
 import PropTypes from 'prop-types'
 function Home({ apiReq, filteredVersionCarDetails, isFetching,vehRental }) {
-  console.log(filteredVersionCarDetails);
+
   useEffect(() => {
     apiReq();
   }, []);

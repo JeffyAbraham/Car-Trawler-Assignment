@@ -13,7 +13,7 @@ function FilterContainer({ setPriceFilter, applyMultiFilter }) {
   const [active, setCurrent] = useState(0);
 
   const handleChange = function (e) {
-    console.log(e.target.id);
+  
 
     setCurrent(parseInt(e.target.id));
   };

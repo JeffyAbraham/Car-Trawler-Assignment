@@ -1,5 +1,7 @@
+//accepts label name active as the prop
+//component is resuabele
+//based on the value of active we toggle class
 import "./custom-checkbox.css";
-
 export default function CustomChecKBox({
   label,
   name,

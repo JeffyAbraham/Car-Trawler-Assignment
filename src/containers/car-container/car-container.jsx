@@ -3,7 +3,6 @@ import PassengerIcon from "../../assests/man-user.png";
 import DoorIcon from "../../assests/car-door.png";
 import BreifCase from "../../assests/briefcase.png";
 import Snowflake from "../../assests/snowflake.png";
-import PropTypes from "prop-types";
 import Avis from "../../assests/avis.png";
 import Alamo from "../../assests/alamo.png";
 import Hertz from "./../../assests/Hertz.png";
@@ -50,15 +49,15 @@ export default function CarContainer({ ...otherProps }) {
           <div className="supply-brand">
             {Name === "HERTZ" ? (
               <div>
-                <img width="64px" src={Hertz} />
+                <img width="64px" src={Hertz} alt='h' />
               </div>
             ) : Name === "ALAMO" ? (
               <div>
-                <img width="64px" src={Alamo} />
+                <img width="64px" src={Alamo} alt='h'/>
               </div>
             ) : (
               <div>
-                <img width="64px" src={Avis} />
+                <img width="64px" src={Avis}alt='h' />
               </div>
             )}
           </div>

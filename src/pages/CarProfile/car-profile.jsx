@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { connect } from "react-redux";
 import { findCarbyId } from "../../redux/car-reducer/car-action";
-import WithSpinner from "../../hoc/with-spinner/with-spinner";
 import Avis from "../../assests/avis.png";
 import Alamo from "../../assests/alamo.png";
 import Hertz from "./../../assests/Hertz.png";
@@ -57,15 +56,15 @@ function CarProfile({ match, findCarbyId, currentCar }) {
               <div>
                 {currentCar["Name"] === "HERTZ" ? (
                   <div>
-                    <img width="94px" src={Hertz} />
+                    <img width="94px" src={Hertz} alt='h'/>
                   </div>
                 ) : currentCar["Name"] === "ALAMO" ? (
                   <div>
-                    <img width="94px" src={Alamo} />
+                    <img width="94px" src={Alamo} alt='h' />
                   </div>
                 ) : (
                   <div>
-                    <img width="94px" src={Avis} />
+                    <img width="94px" src={Avis} alt='h' />
                   </div>
                 )}
               </div>
