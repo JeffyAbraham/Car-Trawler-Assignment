@@ -36,7 +36,7 @@ export const apiReq = () => {
     dispatch(getCarDetails());
 
     axios
-      .get("http://www.cartrawler.com/ctabe/cars.json")
+      .get("https://www.cartrawler.com/ctabe/cars.json")
       .then((res) => {
         var data = res.data[0].VehAvailRSCore;
 
