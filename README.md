@@ -10,7 +10,7 @@
 
 ## Optional Features
 
-### Implemented advanced objectives
+##### Implemented advanced objectives
 ### Filter by Price
 ### Filter by brand
 ### Filter based on multiple criteria
