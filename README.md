@@ -1,7 +1,11 @@
 # Car trawler assignment
-### run npm install to install all dependencies
-### run npm start to launch the application 
-### npm run test to run the test suites
+
+##### run npm install to install all dependencies
+`npm install `
+##### to run the application
+`npm run start`
+##### to run test suites
+`npm run test`
 
 
 ## Core Features
@@ -10,7 +14,7 @@
 
 ### Optional Features
 
-##### Implemented advanced objectives
+
 ##### Filter by Price
 ##### Filter by brand
 ##### Filter based on multiple criteria
