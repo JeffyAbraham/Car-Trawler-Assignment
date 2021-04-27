@@ -10,16 +10,16 @@
 
 ## Core Features
 
-##### All the mentioned core objectives implemented
+##### All thecore objectives implemented
 
 ### Optional Features
 
-
+##### All thecore optional features implemented
 ##### Filter by Price
 ##### Filter by brand
 ##### Filter based on multiple criteria
 ##### Deployed on AWS amplify
-##### Performed unit testing  using jest + enzyme and prop checking on selected components, 
+##### Performed unit testing  using jest + enzyme  on selected components, 
 
 ### Additional features
 
