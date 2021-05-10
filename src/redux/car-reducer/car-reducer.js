@@ -6,9 +6,9 @@ import {
   setLocation,
 } from "./car-utility";
 //copy the array to another array and use it to display state
-//else if original array modifies then the ablity to retain the value will be impossible
-//Ideally the it would be good idea to store the filter in  array and then iterate through the array and apply filters
-//because it would reduce the reduendancy in data on the downside you might have to write additional logic
+//else if original array modifies then the ablity to retain the value will not be possible
+//Ideally the it would be a good idea to store the filter in  array and then iterate through the array and apply filters
+//because it would reduce the reduendancy in the codebase, on the downside you might have to write additional logic
 const INITIAL_STATE = {
   vehRental: { Pickup: "", Drop: "" },
   filteredVersionCarDetails: [],
